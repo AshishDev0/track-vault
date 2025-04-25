@@ -34,7 +34,6 @@ import { CalendarIcon, Loader2 } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { CreateTransaction } from "@/app/(dashboard)/_actions/transactions";
-import { Transaction } from "@/lib/generated/prisma";
 import { toast } from "sonner";
 import { DateToUTCDate } from "@/lib/helpers";
 
@@ -153,7 +152,7 @@ function CreateTransactionDialog({ trigger, type}: Props) {
                         <FormField 
                             control={form.control}
                             name="category"
-                            render={({ field }) => (
+                            render={() => (
                                 <FormItem>
                                     <FormLabel>Category</FormLabel>
                                     <FormControl>
